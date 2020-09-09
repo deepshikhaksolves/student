@@ -20,6 +20,9 @@
         'views/ks_student_exam_view.xml',
         'views/ks_stu_class_wizard_view.xml',
         'views/ks_exam_wizard_view.xml',
+        'views/ks_stu_sub_wizard_view.xml',
+        'reports/ks_student_report.xml',
+        'reports/ks_student_report_card.xml',
 
     ],
     'demo': [],

@@ -8,8 +8,10 @@ class KsExam(models.Model):
 
     name = fields.Char('Exam Name', required=True)
     ks_class_subject_id = fields.Many2one('ks.class.subject', 'Class Subject')
-    ks_current_year = fields.Many2one('ks.school.year', 'Year',
+    ks_school_year = fields.Many2one('ks.school.year', 'Year',
                                       domain="[('is_current_year', '=', True)]")
+
+
 
     # def ks_year_compute(self):
     #     ks_year = self.env['ks.school.year'].search([])

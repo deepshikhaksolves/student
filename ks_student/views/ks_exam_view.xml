@@ -23,7 +23,7 @@
                                 <field name="name"/>
                             </group>
                             <group>
-                                <field name="ks_current_year"/>
+                                <field name="ks_school_year"/>
                             </group>
                             <group>
                                 <field name="ks_class_subject_id"/>

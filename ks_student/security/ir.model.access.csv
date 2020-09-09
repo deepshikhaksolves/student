@@ -10,4 +10,5 @@ access_ks_student_subject_id,access.ks.student.subject,ks_student.model_ks_stude
 access_ks_exam_id,access.ks.exam,ks_student.model_ks_exam,,1,1,1,1
 access_ks_student_exam_id,access.ks.student.exam,ks_student.model_ks_student_exam,,1,1,1,1
 access_ks_student_class_wizard_id,access.ks.student.class.wizard,ks_student.model_ks_student_class_wizard,,1,1,1,1
+access_ks_student_subject_wizard_id,access.ks.student.subject.wizard,ks_student.model_ks_student_subject_wizard,,1,1,1,1
 access_ks_exam_wizard_id,access.ks.exam.wizard,ks_student.model_ks_exam_wizard,,1,1,1,1

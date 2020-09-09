@@ -7,9 +7,6 @@
             <field name="arch" type="xml">
                 <form string="Student Class Wizard">
                     <group>
-                        <field name="ks_name"/>
-                    </group>
-                    <group>
                         <group>
                             <field name="ks_class_id"/>
                         </group>
@@ -19,6 +16,9 @@
                         <group>
                             <field name="ks_year_id"/>
                         </group>
+                    </group>
+                    <group>
+                        <field name="ks_name"/>
                     </group>
                     <footer>
                         <button name="ks_create_student_class"

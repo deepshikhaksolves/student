@@ -8,7 +8,7 @@ class KsClassSubject(models.Model):
     _description = 'Class Subject'
 
     ks_subject_id = fields.Many2one('ks.subject', 'Subject ID', required=True,)
-    ks_class_sub_id = fields.Many2one('ks.class.subject', 'Class Subject')
+    # ks_class_sub_id = fields.Many2one('ks.class.subject', 'Class Subject')
     ks_class_id = fields.Many2one('ks.class', 'Class ID', required=True)
     ks_division_id = fields.Many2one('ks.division', 'Division ID', required=True,
                                      domain="[('ks_class_id', '=', ks_class_id)]")

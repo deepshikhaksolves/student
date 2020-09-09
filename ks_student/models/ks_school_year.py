@@ -31,7 +31,7 @@ class KsSchoolYear(models.Model):
         ks_start_date = self.ks_start_date
         ks_end_date = self.ks_end_date
         if ks_start_date and ks_end_date:
-            if (ks_end_date.year > ks_start_date.year) and (ks_end_date.month < ks_start_date.month):
+            if (ks_end_date.year < ks_start_date.year) and (ks_end_date.month > ks_start_date.month):
                 raise ValidationError(_("End Date Should Be next Year of Start Year"))
             # ks_overlap_year = (ks_end_date - ks_start_date).days + 1
             # if ks_overlap_year == 366:

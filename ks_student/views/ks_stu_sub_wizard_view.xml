@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ks_stu_subject_wizard_view" model="ir.ui.view">
+            <field name="name">Student Subject Wizard</field>
+            <field name="model">ks.student.subject.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Student Subject Wizard">
+                    <group>
+                        <group>
+                            <field name="ks_subject_id"/>
+                        </group>
+                        <group>
+                            <field name="ks_student_class_id"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="ks_create_student_subject"
+                                string="Student Subject" type="object"
+                                class="btn-primary"/>
+                        <button string="Cancel"
+                                class="btn-default"
+                                special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="ks_stu_subject_wizard_action_view" model="ir.actions.act_window">
+            <field name="name">Student Subject wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ks.student.subject.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ks_stu_subject_wizard_view"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="ks_stu_subject_wizard_menu_id" name="Student Subject Wizard" parent="ks_wizard_root_menu_id"
+                  action="ks_stu_subject_wizard_action_view"/>
+    </data>
+</odoo>

@@ -7,7 +7,12 @@
             <field name="arch" type="xml">
                 <form string="Student Exam Wizard">
                     <group>
-                        <field name="ks_name"/>
+                        <group>
+                            <field name="ks_name"/>
+                         </group>
+                        <group>
+                            <field name="name"/>
+                        </group>
                     </group>
                     <group>
                         <group>

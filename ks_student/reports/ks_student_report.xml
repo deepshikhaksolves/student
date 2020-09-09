@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <report
+        string="Report card"
+        id="ks_student_report_id"
+        model="ks.student.exam"
+        report_type="qweb-pdf"
+        name="ks_student.ks_student_report_card"
+        file="ks_student.ks_student_report_card"/>
+</odoo>
+
