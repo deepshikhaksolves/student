@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="ks_class_subject_tree_view" model="ir.ui.view">
+            <field name="name">ks.class.subject.tree</field>
+            <field name="model">ks.class.subject</field>
+            <field name="arch" type="xml">
+                <tree string="Class Subject">
+                    <field name="ks_class_id"/>
+                    <field name="ks_division_id"/>
+                    <field name="ks_subject_id"/>
+                    <field name="ks_max_marks"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="ks_class_subject_form_view" model="ir.ui.view">
+            <field name="name">ks.class.subject.form</field>
+            <field name="model">ks.class.subject</field>
+            <field name="arch" type="xml">
+                <form string="Class Subject">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="ks_class_id"/>
+                                <field name="ks_division_id"/>
+                                <field name="ks_class_sub_id"/>
+                            </group>
+                            <group>
+                                <field name="ks_subject_id"/>
+                                <field name="ks_max_marks"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="ks_class_subject_action_id">
+            <field name="name">Class Subject</field>
+            <field name="res_model">ks.class.subject</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create new class subject!
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="ks_class_subject_menu_id" name="Class Subject" parent="ks_class_root_menu_id"
+                  action="ks_class_subject_action_id"/>
+    </data>
+</odoo>

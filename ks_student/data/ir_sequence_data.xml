@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Sequences for Roll Number -->
+        <record id="ks_stu_roll_num__id" model="ir.sequence">
+            <field name="name">Student Roll Number</field>
+            <field name="code">roll.number.sequence</field>
+            <field name="prefix">ST</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+<!--         Sequences for Roll Number - -->
+        <record id="ks_stu_subject__id" model="ir.sequence">
+            <field name="name">Subject Code</field>
+            <field name="code">ks.subject</field>
+            <field name="prefix">Sub</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!--         Sequences for Class - -->
+        <record id="ks_stu_class_id" model="ir.sequence">
+            <field name="name">Class Code</field>
+            <field name="code">ks.class.code</field>
+            <field name="prefix">Class</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+    </data>
+</odoo>

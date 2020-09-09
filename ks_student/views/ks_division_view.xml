@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="ks_division_tree_view" model="ir.ui.view">
+            <field name="name">ks.division.tree</field>
+            <field name="model">ks.division</field>
+            <field name="arch" type="xml">
+                <tree string="Division">
+                    <field name="name"/>
+                    <field name="ks_class_id"/>
+                    <field name="ks_class_subject_ids"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="ks_division_form_view" model="ir.ui.view">
+            <field name="name">ks.division.form</field>
+            <field name="model">ks.division</field>
+            <field name="arch" type="xml">
+                <form string="Division">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+<!--                                <field name="ks_class_id"/>-->
+                            </group>
+                            <group>
+                                <field name="ks_class_id"/>
+                            </group>
+                        </group>
+                        <group>
+                           <field name="ks_class_subject_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="ks_division_action_id">
+            <field name="name">Division</field>
+            <field name="res_model">ks.division</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create new Division!
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="ks_division_menu_id" name="Division" parent="ks_class_root_menu_id"
+                  action="ks_division_action_id"/>
+    </data>
+</odoo>

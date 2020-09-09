@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="ks_student_exam_tree_view" model="ir.ui.view">
+            <field name="name">ks.student.exam.tree</field>
+            <field name="model">ks.student.exam</field>
+            <field name="arch" type="xml">
+                <tree string="Student Exam">
+                    <field name="name"/>
+                    <field name="ks_exam_id"/>
+                    <field name="ks_student_class_id"/>
+                    <field name="ks_obtained_marks"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="ks_student_exam_form_view" model="ir.ui.view">
+            <field name="name">ks.student.exam.form</field>
+            <field name="model">ks.student.exam</field>
+            <field name="arch" type="xml">
+                <form string="Student Exam">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="ks_exam_id"/>
+                            </group>
+                            <group>
+                                <field name="ks_student_class_id"/>
+                                <field name="ks_obtained_marks"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="ks_student_exam_action_id">
+            <field name="name">Student Exam</field>
+            <field name="res_model">ks.student.exam</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create new student subject!
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="ks_student_exam_menu_id" name="Student Exam" parent="ks_student_root_menu_id"
+                  action="ks_student_exam_action_id"/>
+    </data>
+</odoo>

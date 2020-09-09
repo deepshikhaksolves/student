@@ -1,0 +1,28 @@
+{
+    'name': 'Student Record',
+    'summary': """This module will add a record to store student details""",
+    'version': '0.0.1',
+    'description': """This module will add a record to store student details""",
+    'author': 'Sanjeeta',
+    'depends': ['base'],
+    'data': [
+        'security/ir.model.access.csv',
+        'data/ir_sequence_data.xml',
+        'views/ks_school_year_view.xml',
+        'views/ks_student_view.xml',
+        'views/ks_class_view.xml',
+        'views/ks_student_class_view.xml',
+        'views/ks_division_view.xml',
+        'views/ks_subject_view.xml',
+        'views/ks_class_subject_view.xml',
+        'views/ks_student_subject_view.xml',
+        'views/ks_exam_view.xml',
+        'views/ks_student_exam_view.xml',
+        'views/ks_stu_class_wizard_view.xml',
+        'views/ks_exam_wizard_view.xml',
+
+    ],
+    'demo': [],
+    'installable': True,
+    'auto_install': False,
+}

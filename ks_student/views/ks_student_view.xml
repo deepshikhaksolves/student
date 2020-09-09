@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="ks_student_tree_view" model="ir.ui.view">
+            <field name="name">ks.student.tree</field>
+            <field name="model">ks.student</field>
+            <field name="arch" type="xml">
+                <tree string="Student">
+                    <field name="name"/>
+                    <field name="ks_roll_number"/>
+                    <field name="ks_dob"/>
+<!--                    <field name="ks_student_history_ids"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <record id="ks_student_form_view" model="ir.ui.view">
+            <field name="name">ks.student.form</field>
+            <field name="model">ks.student</field>
+            <field name="arch" type="xml">
+                <form string="Student">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="ks_roll_number" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="ks_parent_name_id"/>
+                            </group>
+                            <group>
+                                <field name="ks_dob"/>
+                                <field name="ks_age"/>
+                            </group>
+                            <group>
+                                <label for="street" string="Address"/>
+                                    <div class="o_address_format">
+                                        <field name="street" placeholder="Street..." class="o_address_street"/>
+                                        <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+                                        <field name="city" placeholder="City" class="o_address_city"/>
+                                        <field name="state_id" class="o_address_state" placeholder="State" options='{"no_open": True}'/>
+                                        <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                                        <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}'/>
+                                    </div>
+<!--                              <field name="mobile"/>-->
+                           </group>
+                            <group>
+                                <field name="mobile"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="ks_student_history_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="ks_student_view_id">
+            <field name="name">Student</field>
+            <field name="res_model">ks.student</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create new school year
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="ks_student_root_menu_id" name="Student" parent="menu_school"/>
+        <menuitem id="ks_student_menu_id" name="Student" parent="ks_student_root_menu_id"
+                  action="ks_student_view_id"/>
+    </data>
+</odoo>

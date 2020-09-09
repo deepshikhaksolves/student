@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ks_stu_exam_wizard_view" model="ir.ui.view">
+            <field name="name">Student Exam Wizard</field>
+            <field name="model">ks.exam.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Student Exam Wizard">
+                    <group>
+                        <field name="ks_name"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="ks_exam_id"/>
+                        </group>
+                        <group>
+                            <field name="ks_obtained_marks"/>
+                        </group>
+<!--                        <group>-->
+<!--                            <field name="ks_year_id"/>-->
+<!--                        </group>-->
+                    </group>
+                    <footer>
+                        <button name="ks_create_student_exam"
+                                string="Student Exam" type="object"
+                                class="btn-primary"/>
+                        <button string="Cancel"
+                                class="btn-default"
+                                special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="ks_stu_exam_wizard_action_view" model="ir.actions.act_window">
+            <field name="name">Student Exam wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ks.exam.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ks_stu_exam_wizard_view"/>
+            <field name="target">new</field>
+        </record>
+
+
+        <menuitem id="ks_exam_wizard_menu_id" name="Student Exam Wizard" parent="ks_wizard_root_menu_id"
+                  action="ks_stu_exam_wizard_action_view"/>
+    </data>
+</odoo>

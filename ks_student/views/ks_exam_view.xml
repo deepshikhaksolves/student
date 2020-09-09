@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="ks_exam_tree_view" model="ir.ui.view">
+            <field name="name">ks.exam.tree</field>
+            <field name="model">ks.exam</field>
+            <field name="arch" type="xml">
+                <tree string="Exam">
+                    <field name="name"/>
+                    <field name="ks_class_subject_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="ks_exam_form_view" model="ir.ui.view">
+            <field name="name">ks.exam.form</field>
+            <field name="model">ks.exam</field>
+            <field name="arch" type="xml">
+                <form string="Exam">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="ks_current_year"/>
+                            </group>
+                            <group>
+                                <field name="ks_class_subject_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="ks_exam_action_id">
+            <field name="name">Exam</field>
+            <field name="res_model">ks.exam</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create new student subject!
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="ks_exam_root_menu_id" name="Exam" parent="menu_school"/>
+        <menuitem id="ks_exam_menu_id" name="Exam" parent="ks_exam_root_menu_id"
+                  action="ks_exam_action_id"/>
+    </data>
+</odoo>

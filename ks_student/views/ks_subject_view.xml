@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="ks_subject_tree_view" model="ir.ui.view">
+            <field name="name">ks.subject.tree</field>
+            <field name="model">ks.subject</field>
+            <field name="arch" type="xml">
+                <tree string="Class">
+                    <field name="name"/>
+                    <field name="name_sequence"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="ks_subject_form_view" model="ir.ui.view">
+            <field name="name">ks.subject.form</field>
+            <field name="model">ks.subject</field>
+            <field name="arch" type="xml">
+                <form string="Class">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name_sequence" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="ks_subject_action_id">
+            <field name="name">Subject</field>
+            <field name="res_model">ks.subject</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create new subject!
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="ks_subject_menu_root_id" name="Subject" parent="menu_school"/>
+        <menuitem id="ks_subject_menu_id" name="Subject" parent="ks_subject_menu_root_id"
+                  action="ks_subject_action_id"/>
+    </data>
+</odoo>

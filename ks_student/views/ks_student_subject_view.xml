@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="ks_student_subject_tree_view" model="ir.ui.view">
+            <field name="name">ks.student.subject.tree</field>
+            <field name="model">ks.student.subject</field>
+            <field name="arch" type="xml">
+                <tree string="Student Subject">
+                    <field name="ks_subject_id"/>
+                    <field name="ks_student_class_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="ks_student_subject_form_view" model="ir.ui.view">
+            <field name="name">ks.student.subject.form</field>
+            <field name="model">ks.student.subject</field>
+            <field name="arch" type="xml">
+                <form string="Student Subject">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="ks_subject_id"/>
+                            </group>
+                            <group>
+                                <field name="ks_student_class_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="ks_student_subject_action_id">
+            <field name="name">Student Subject</field>
+            <field name="res_model">ks.student.subject</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create new student subject!
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="ks_student_subject_menu_id" name="Student Subject" parent="ks_student_root_menu_id"
+                  action="ks_student_subject_action_id"/>
+    </data>
+</odoo>
