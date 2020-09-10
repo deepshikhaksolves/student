@@ -24,7 +24,7 @@
                             <group>
                                 <field name="ks_class_id"/>
                                 <field name="ks_division_id"/>
-<!--                                <field name="ks_class_sub_id"/>-->
+                                <field name="ks_class_sub_id"/>
                             </group>
                             <group>
                                 <field name="ks_subject_id"/>
