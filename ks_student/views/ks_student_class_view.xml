@@ -31,8 +31,8 @@
                                 <field name="ks_class_id"/>
                             </group>
                             <group>
-                                <field name="ks_division_id"/>
                                 <field name="ks_year_id"/>
+                                <field name="ks_division_id"/>
                             </group>
                         </group>
                         <group>

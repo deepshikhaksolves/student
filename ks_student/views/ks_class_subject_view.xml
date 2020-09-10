@@ -23,11 +23,11 @@
                         <group>
                             <group>
                                 <field name="ks_class_id"/>
-                                <field name="ks_division_id"/>
-                                <field name="ks_class_sub_id"/>
+                                <field name="ks_subject_id"/>
+                                <field name="ks_class_sub_id" invisible="1"/>
                             </group>
                             <group>
-                                <field name="ks_subject_id"/>
+                                <field name="ks_division_id"/>
                                 <field name="ks_max_marks"/>
                             </group>
                         </group>

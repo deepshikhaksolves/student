@@ -19,7 +19,7 @@ class KSStudentSubjectsWizard(models.TransientModel):
                             ks_subject.write({'ks_subject_id': ks_subject.ks_subject_id.id})
                 else:
                     student_dict = {'ks_subject_id': subject.id,
-                                    'ks_class_id': rec.ks_class_id.id}
+                                    'ks_student_class_id': rec.ks_student_class_id.id}
                     rec.env['ks.student.subject'].create(student_dict)
 
 

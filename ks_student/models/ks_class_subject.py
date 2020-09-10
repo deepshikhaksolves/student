@@ -1,4 +1,5 @@
-from odoo import api, models, fields
+from odoo import api, models, _, fields
+from odoo.exceptions import UserError, ValidationError
 from datetime import date
 
 
@@ -16,3 +17,9 @@ class KsClassSubject(models.Model):
 
     # _sql_constraints = [
     #     ('ks_division_id_uniq', 'unique (ks_division_id)', 'Division ID must be unique!'), ]
+
+    @api.onchange('ks_max_marks')
+    def ks_max_marks_check(self):
+        for rec in self:
+            if rec.ks_max_marks == 0:
+                raise ValidationError(_("Max Marks can not be Zero(0)."))

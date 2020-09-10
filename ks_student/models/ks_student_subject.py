@@ -8,7 +8,7 @@ class KsStudentSubject(models.Model):
     _description = 'Student Subject'
 
     ks_subject_id = fields.Many2one('ks.subject', 'Subject ID')
-    ks_student_class_id = fields.Many2one('ks.student.class', 'Class ID')
+    ks_student_class_id = fields.Many2one(comodel_name='ks.student.class', string='Class ID')
 
     # _sql_constraints = [
     #     ('ks_stu_class_id_uniq', 'unique (ks_student_class_id)', 'Student Class ID must be unique!'), ]
