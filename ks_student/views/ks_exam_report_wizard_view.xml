@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ks_stu_exam_report_wizard_view" model="ir.ui.view">
+            <field name="name">Student Report Exam Wizard</field>
+            <field name="model">ks.exam.report.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Student Exam Report Wizard">
+                    <group>
+                        <group>
+                            <field name="ks_name"/>
+                         </group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </group>
+<!--                    <group>-->
+<!--                        <group>-->
+<!--                            <field name="ks_exam_id"/>-->
+<!--                        </group>-->
+<!--                        <group>-->
+<!--                            <field name="ks_obtained_marks"/>-->
+<!--                        </group>-->
+<!--                        <group>-->
+<!--                            <field name="ks_year_id"/>-->
+<!--                        </group>-->
+<!--                    </group>-->
+                    <footer>
+                        <button name="do_print"
+                                string="Report Print" type="object"
+                                class="btn-primary"/>
+                        <button string="Cancel"
+                                class="btn-default"
+                                special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="ks_stu_exam_report_wizard_action_view" model="ir.actions.act_window">
+            <field name="name">Student Exam Report wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ks.exam.report.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ks_stu_exam_report_wizard_view"/>
+            <field name="target">new</field>
+        </record>
+
+
+        <menuitem id="ks_exam_report_wizard_menu_id" name="Student Report Wizard" parent="ks_wizard_root_menu_id"
+                  action="ks_stu_exam_report_wizard_action_view"/>
+    </data>
+</odoo>

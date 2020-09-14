@@ -11,5 +11,6 @@ from.import ks_student_exam
 from.import ks_stu_class_wizard
 from.import ks_exam_wizard
 from.import ks_stu_sub_wizard
+from.import ks_exam_report_wizard
 
 

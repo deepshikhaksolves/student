@@ -1,40 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <odoo>
-    <template id="ks_student_report_card">
-        <t t-call="web.html_container">
-            <t t-foreach="docs" t-as="doc">
-                <t t-call="web.external_layout">
-                   <div class="page">
-                       <center>
-                           <h2>Student Report Card</h2>
-                       </center>
-                       <br></br>
-                       <br></br>
-                       <br></br>
-                       <table class="table table-sm o_main_table" style="width:100%" border="1">
-                           <thead>
-                              <tr>
-                                  <th>Name</th>
-                                  <th>Subject</th>
-                                  <th>Class</th>
-                                  <th>Obtain Marks</th>
-                              </tr>
-                           </thead>
-                           <tbody class="table table-sm">
-                              <tr>
-                                  <td><span t-esc="doc.name"/></td>
-                                  <td><span t-esc="doc.ks_exam_id.display_name"/></td>
-                                  <td><span t-esc="doc.ks_student_class_id.display_name"/></td>
-                                  <td><span t-esc="doc.ks_obtained_marks"/></td>
-                              </tr>
-                           </tbody>
-                       </table>
-
-                     </div>
-                </t>
-            </t>
-        </t>
-    </template>
-
+  <template id="ks_student_report_card">
+    <t t-call="report.html_container">
+      <t t-call="report.external_layout">
+        <div class="page">
+          <h2>Student Report Card</h2>
+          <div class="oe_structure"/>
+          <h2 class="text-center">Student Report Card</h2>
+          <t t-foreach="docs" t-as="o">
+<!--            <div class="text-right">-->
+<!--            Date From: <span t-field="o.date_from"/><br/>-->
+<!--            Date To: <span t-field="o.date_to"/>-->
+<!--          </div>-->
+          <br/>
+            <table class="table table-custom table-condensed">
+              <tr class="table-inner">
+                <th class="table-inner"><strong>Student Name</strong></th>
+<!--                <t t-foreach="o.generate_month_dates(o.date_from,o.date_to)" t-as="v">-->
+<!--                  <th class="table-inner"><strong><t t-esc="v"/></strong></th>-->
+<!--                </t>-->
+                <th class="table-inner"><strong>Class Name</strong></th>
+                <th class="table-inner"><strong>Exam Name</strong></th>
+                <th class="table-inner"><strong>Subject</strong></th>
+                <th class="table-inner"><strong>Obtained Marks</strong></th>
+                <th class="table-inner"><strong>Max Marks</strong></th>
+              </tr>
+              <!-- for employee wise table Info -->
+              <t t-foreach="o.ks_student_id" t-as="e">
+                <tr class="table-inner">
+                  <th class="table-inner"><strong t-field="e.name"/></th>
+                  <t t-foreach="o.ks_student_exam_report()"
+                      t-as="item">
+                    <th class="table-inner"><t t-esc="item"/></th>
+                  </t>
+                </tr>
+              </t>
+            </table>
+          </t>
+        </div>
+      </t>
+    </t>
+  </template>
 </odoo>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<odoo>-->
+<!--    <template id="ks_student_report_card">-->
+<!--        <t t-call="web.html_container">-->
+<!--            <t t-foreach="docs" t-as="doc">-->
+<!--                <t t-call="web.external_layout">-->
+<!--                   <div class="page">-->
+<!--                       <center>-->
+<!--                           <h2>Student Report Card</h2>-->
+<!--                       </center>-->
+<!--                       <br></br>-->
+<!--                       <br></br>-->
+<!--                       <br></br>-->
+<!--                       <table class="table table-sm o_main_table" style="width:100%" border="1">-->
+<!--                           <thead>-->
+<!--                              <tr>-->
+<!--                                  <th>Name</th>-->
+<!--                                  <th>Subject</th>-->
+<!--                                  <th>Class</th>-->
+<!--                                  <th>Obtain Marks</th>-->
+<!--                              </tr>-->
+<!--                           </thead>-->
+<!--                           <tbody class="table table-sm">-->
+<!--                              <tr>-->
+<!--                                   <t t-foreach="o.ks_create_student_exam_report(e,o.date_from,o.date_to)"-->
+<!--                                t-as="item">-->
+<!--                                <th class="table-inner"><t t-esc="item"/></th>-->
+<!--                  </t>-->
+<!--                              </tr>-->
+<!--                           </tbody>-->
+<!--                       </table>-->
+
+<!--                     </div>-->
+<!--                </t>-->
+<!--            </t>-->
+<!--        </t>-->
+<!--    </template>-->
+
+<!--</odoo>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
