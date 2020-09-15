@@ -3,7 +3,7 @@
     <report
         string="Report card"
         id="ks_student_report_id"
-        model="ks.student.exam"
+        model="ks.exam.report.wizard"
         report_type="qweb-pdf"
         name="ks_student.ks_student_report_card"
         file="ks_student.ks_student_report_card"/>

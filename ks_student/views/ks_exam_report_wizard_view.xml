@@ -11,23 +11,15 @@
                             <field name="ks_name"/>
                          </group>
                         <group>
-                            <field name="name"/>
+                            <field name="ks_school_year"/>
                         </group>
                     </group>
-<!--                    <group>-->
-<!--                        <group>-->
-<!--                            <field name="ks_exam_id"/>-->
-<!--                        </group>-->
-<!--                        <group>-->
-<!--                            <field name="ks_obtained_marks"/>-->
-<!--                        </group>-->
-<!--                        <group>-->
-<!--                            <field name="ks_year_id"/>-->
-<!--                        </group>-->
-<!--                    </group>-->
+                    <group>
+                        <field name="ks_stu_name"/>
+                    </group>
                     <footer>
-                        <button name="do_print"
-                                string="Report Print" type="object"
+                        <button name="%(ks_student_report_id)d"
+                                string="Print Report" type="action"
                                 class="btn-primary"/>
                         <button string="Cancel"
                                 class="btn-default"

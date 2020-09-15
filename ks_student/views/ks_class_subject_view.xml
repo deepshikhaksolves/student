@@ -21,9 +21,9 @@
                 <form string="Class Subject">
                     <sheet>
                         <group>
-                            <group>
-                                <field name="ks_student_class_id"/>
-                             </group>
+<!--                            <group>-->
+<!--                                <field name="ks_student_class_id"/>-->
+<!--                             </group>-->
                              <group>
                                 <field name="ks_subject_id"/>
                                 <field name="ks_class_sub_id" invisible="1"/>

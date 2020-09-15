@@ -14,7 +14,7 @@ class KsClassSubject(models.Model):
     ks_division_id = fields.Many2one('ks.division', 'Division ID', required=True,
                                      domain="[('ks_class_id', '=', ks_class_id)]")
     ks_max_marks = fields.Integer('Max Marks', required=True)
-    ks_student_class_id = fields.Many2one('ks.student.class', 'Student Class ID')  # added a field for domain
+    # ks_student_class_id = fields.Many2one('ks.student.class', 'Student Class ID')  # added a field for domain
 
     # _sql_constraints = [
     #     ('ks_division_id_uniq', 'unique (ks_division_id)', 'Division ID must be unique!'), ]
