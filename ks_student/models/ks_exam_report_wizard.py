@@ -56,9 +56,9 @@ class KSStudentExamReportWizard(models.TransientModel):
         return ks_subject_detail
 
     def ks_list_of_subject(self, student):
-        ks_subject_detail = []
+        ks_subject_list = []
         ks_student_report = self.ks_student_exam_report(student)
         if ks_student_report:
             for i in range(len(ks_student_report.get('ks_subject_name'))):
-                ks_subject_detail.append(ks_student_report.get('ks_subject_name')[i])
-            return ks_subject_detail
+                ks_subject_list.append(ks_student_report.get('ks_subject_name')[i])
+            return ks_subject_list

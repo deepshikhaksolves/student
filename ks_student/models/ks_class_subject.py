@@ -19,8 +19,9 @@ class KsClassSubject(models.Model):
     # _sql_constraints = [
     #     ('ks_division_id_uniq', 'unique (ks_division_id)', 'Division ID must be unique!'), ]
 
-    @api.onchange('ks_max_marks')
-    def ks_max_marks_check(self):
-        for rec in self:
-            if rec.ks_max_marks == 0:
-                raise ValidationError(_("Max Marks can not be Zero(0)."))
+    @api.model
+    def create(self, vals):
+        if vals.get('ks_max_marks') == 0:
+            raise ValidationError(_("Max Marks can not be Zero(0)."))
+        result = super(KsClassSubject, self).create(vals)
+        return result

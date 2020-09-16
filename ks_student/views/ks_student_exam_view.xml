@@ -29,10 +29,13 @@
                                 <field name="ks_school_year"/>
                             </group>
                             <group>
-                                <field name="ks_exam_id"/>
+                                <field name="ks_class_id"/>
                             </group>
                             <group>
                                 <field name="ks_student_class_id"/>
+                             </group>
+                             <group>
+                                <field name="ks_exam_id"/>
                             </group>
                             <group>
                                 <field name="ks_obtained_marks"/>
@@ -48,7 +51,7 @@
             <field name="res_model">ks.student.exam</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
-                <p class="oe_view_nocontent_create">Create new student subject!
+                <p class="oe_view_nocontent_create">Create new student Exam!
                 </p>
             </field>
         </record>

@@ -14,7 +14,8 @@ class KSStudentClassWizard(models.TransientModel):
     def ks_create_student_class(self):
         ks_sub_list = []
         for rec in self:
-            ks_total_student = self.env['ks.student.class'].search([('ks_student_id', 'in', rec.ks_name.ids)])
+            ks_total_student = self.env['ks.student.class'].search([('ks_student_id', 'in', rec.ks_name.ids),
+                                                                    ('ks_year_id', '=', rec.ks_year_id.id)])
             for ks_sub in rec.ks_division_id.ks_class_subject_ids:
                 ks_sub_list.append([0, 0, {
                     'ks_subject_id': ks_sub.id,

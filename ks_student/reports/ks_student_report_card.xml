@@ -25,24 +25,23 @@
                 </tr>
             </table>
               <br/>
-              <br/>
             <table class="table table-custom table-condensed">
                 <tr>
                     <th class="table-inner"><strong>Subject</strong></th>
                     <th class="table-inner"><strong>Obtained Marks</strong></th>
                     <th class="table-inner"><strong>Max Marks</strong></th>
                 </tr>
-<!--               for employee wise table Info-->
-              <t t-foreach="o.ks_list_of_subject(student)" t-as="e">
+              <t t-foreach="o.ks_list_of_subject(student)" t-as="subject">
                 <tr class="table-inner">
-<!--                  <th class="table-inner"><strong t-field="e.ks_exam_id"/></th>-->
-                  <t t-foreach="o.ks_subject_details(e,student)"
+
+                  <t t-foreach="o.ks_subject_details(subject,student)"
                       t-as="item">
                     <th class="table-inner"><t t-esc="item"/></th>
                   </t>
                 </tr>
               </t>
             </table>
+              <br/><br/><br/><br/>
           </t>
           </t>
         </div>
